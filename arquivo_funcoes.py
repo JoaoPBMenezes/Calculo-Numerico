@@ -1,6 +1,7 @@
 import numpy as np
 
 def create_B(list,nn):
+    #essa funçao gera um vetor de tamanho nn contendo a vazão em cada ponto
     B = np.zeros(shape=(nn))
     B[list[0]] = list[1]
     return B
@@ -14,6 +15,7 @@ def create_C_matrix(nn, C_list):
         C_matrix[C_list[k][0]][C_list[k][1]] = C_list[k][2]
         C_matrix[C_list[k][1]][C_list[k][0]] = C_list[k][2]
     return C_matrix
+
 
 def soma_matrix_no(C_matrix, no):
     #soma de todos os Cs correspondentes aos canos conectados no nó 'no'
@@ -35,6 +37,7 @@ def Assembly(C_matrix, nn):
     return C_assembly
 
 def mod_atm(C_assembly,no):
+    #dentro da matriz C_assembly correspondente ao sistema, altera o valor da linha/coluna correspondentes ao nó 'no' que esta conectado a atmosfera.
     n = len(C_assembly)
     for c in range(n):
         if c == no:
@@ -44,10 +47,12 @@ def mod_atm(C_assembly,no):
     return C_assembly
 
 def solve(C_assembly,B):
+    #resolve o sistema utilizando ferramentas do numpy e retorna um vetor contendo o valor da pressão em cada nó.
     n = len(C_assembly)
     
     pressure = np.linalg.solve(C_assembly, B)
     return pressure
+
 
 
 
