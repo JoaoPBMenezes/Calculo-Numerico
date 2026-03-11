@@ -3,7 +3,8 @@ import numpy as np
 def create_B(list,nn):
     #essa funçao gera um vetor de tamanho nn contendo a vazão em cada ponto
     B = np.zeros(shape=(nn))
-    B[list[0]] = list[1]
+    for a in range(nn):    
+        B[list[a][0]]= list[a][1]
     return B
 def create_C_matrix(nn, C_list):
     #C_list é uma 'lista' nc (numero de canos) por 3.
@@ -52,6 +53,7 @@ def solve(C_assembly,B):
     
     pressure = np.linalg.solve(C_assembly, B)
     return pressure
+
 
 
 
