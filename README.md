@@ -1,4 +1,7 @@
-**Este arquivo contém todas as instruções para o entendimento e execução do código para todos os participantes do grupo!**
-> Sintam-se à vontade para adicionar comentários organizados sobre diferentes partes do código.
-***
+# Bibliotecas Necessárias - Placa Térmica
 
+	Numpy - Computação científica no Python.
+	Scipy (utilizada pelo numpy) - Complemento na operação eficiente com matrizes.
+	Matplotlib - Geração de gráficos e visualização 2D.
+
+	* pip install numpy scipy matplotlib
