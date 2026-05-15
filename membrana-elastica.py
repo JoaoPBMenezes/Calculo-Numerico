@@ -106,7 +106,7 @@ CONFIG = {
     # ---------------------------
     # Geometria da membrana
     # ---------------------------
-    "use_circular_mask": True, # True para círculo, False para quadrado
+    "use_circular_mask": False, # True para círculo, False para quadrado
 
     # ---------------------------
     # Exercícios: Investigando o Comportamento
@@ -115,7 +115,7 @@ CONFIG = {
     "run_exercise_2": False,  # Tabela de frequências vs malha
     "run_exercise_3": False, # Explicação teórica (c_i e phi_i)
     "run_exercise_4": False,  # Projeção do termo forçante senoidal
-    "run_exercise_5": True,  # Gráfico de energia média (loglog)
+    "run_exercise_5": False,  # Gráfico de energia média (loglog)
 }
 
 @dataclass
