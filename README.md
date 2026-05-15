@@ -7,6 +7,7 @@
 - Navegue até a pasta desejada e execute:
 
 	python3 -m venv .venv
+
 	source .venv/bin/activate
 
 - Para encerrar o ambiente:
