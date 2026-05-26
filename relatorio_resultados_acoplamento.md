@@ -3,27 +3,17 @@
 ## 1. Respostas Teóricas
 
 ### Dedução da Regra do Trapézio Composta (Item 4.2.1 - 1)
-Para a temperatura média $\langle T_k 
-angle$:
+Para a temperatura média $\langle T_k \rangle$:
 1. **Divisão do Domínio:** A aresta de comprimento $L_k$ é dividida em $N$ subintervalos iguais. O passo espacial é $\Delta s = L_k / N$.
-2. **Aplicação do Trapézio Simples:** Em cada subintervalo $[s_{n-1}, s_n]$, a área é aproximada por: $pprox (\Delta s/2) \cdot [T(s_{n-1}) + T(s_n)]$
-3. **Composição:** Ao somar todos os intervalos, os nós internos são somados duas vezes. As pontas, apenas uma: $ pprox (\Delta s/2) \cdot [T(s_0) + 2\sum_{n=1}^{N-1} T(s_n) + T(s_N)]$
-4. **Cálculo da Média:** Como a média é $\langle T_k 
-angle = 	ext{Integral} / L_k$, e $\Delta s/L_k = 1/N$:
-   $$\langle T_k 
-angle  pprox \frac{1}{2N} \left[ T(s_0) + 2\sum_{n=1}^{N-1} T(s_n) + T(s_N) 
-ight]$$
+2. **Aplicação do Trapézio Simples:** Em cada subintervalo $[s_{n-1}, s_n]$, a área é aproximada por: $\approx (\Delta s/2) \cdot [T(s_{n-1}) + T(s_n)]$
+3. **Composição:** Ao somar todos os intervalos, os nós internos são somados duas vezes. As pontas, apenas uma: $\approx (\Delta s/2) \cdot [T(s_0) + 2\sum_{n=1}^{N-1} T(s_n) + T(s_N)]$
+4. **Cálculo da Média:** Como a média é $\langle T_k \rangle = \text{Integral} / L_k$, e $\Delta s/L_k = 1/N$:
+   $$\langle T_k \rangle \approx \frac{1}{2N} \left[ T(s_0) + 2\sum_{n=1}^{N-1} T(s_n) + T(s_N) \right]$$
 
 ### Alternativa para o Cálculo da Viscosidade (Item 4.2.1 - 5)
-Em vez de calcular a temperatura média $\langle T 
-angle$ para depois aplicá-la na fórmula da viscosidade (usando $\mu(\langle T 
-angle)$), o mais rigoroso é integrar a **própria viscosidade** ao longo da aresta para achar $\langle \mu 
-angle$:
-$$\langle \mu_k 
-angle = \frac{1}{L_k} \int_0^{L_k} \mu(T(p(s))) ds$$
-**Justificativa:** A viscosidade $\mu(T)$ é fortemente não-linear. Em funções não-lineares, a função da média não é igual à média da função ($\mu(\langle T 
-angle) \neq \langle \mu(T) 
-angle$). Integrar diretamente capta com exatidão a real resistência ao escoamento.
+Em vez de calcular a temperatura média $\langle T \rangle$ para depois aplicá-la na fórmula da viscosidade (usando $\mu(\langle T \rangle)$), o mais rigoroso é integrar a **própria viscosidade** ao longo da aresta para achar $\langle \mu_k \rangle$:
+$$\langle \mu_k \rangle = \frac{1}{L_k} \int_0^{L_k} \mu(T(p(s))) \, ds$$
+**Justificativa:** A viscosidade $\mu(T)$ é fortemente não-linear. Em funções não-lineares, a função da média não é igual à média da função ($\mu(\langle T \rangle) \neq \langle \mu(T) \rangle$). Integrar diretamente capta com exatidão a real resistência ao escoamento.
 
 ---
 
@@ -40,8 +30,7 @@ angle$). Integrar diretamente capta com exatidão a real resistência ao escoame
 | refinada_241x121 | trapezoid | 10 | 43.9103 | 4.823e-02 | 2.641e+03 | 2.815e-03 | 0.041 |
 | refinada_241x121 | trapezoid | 100 | 43.9120 | 4.102e-04 | 2.640e+03 | 2.814e-03 | 0.040 |
 | refinada_241x121 | trapezoid | 1000 | 43.9120 | 0.000e+00 | 2.640e+03 | 2.814e-03 | 0.056 |
-| **refinada_241x121** | **direta $\langle\mu(T)
-angle$** | **1000** | **-** | **-** | **2.652e+03** | **2.827e-03** | **-** |
+| **refinada_241x121** | **direta <μ(T)>** | **1000** | **-** | **-** | **2.652e+03** | **2.827e-03** | **-** |
 | grosseira_61x31 | midpoint | 1 | 44.0231 | 1.472e+00 | 2.607e+03 | 2.777e-03 | 0.033 |
 | grosseira_61x31 | midpoint | 10 | 43.9408 | 2.087e-02 | 2.634e+03 | 2.808e-03 | 0.035 |
 | grosseira_61x31 | midpoint | 100 | 43.9399 | 3.279e-04 | 2.635e+03 | 2.808e-03 | 0.047 |
@@ -50,8 +39,7 @@ angle$** | **1000** | **-** | **-** | **2.652e+03** | **2.827e-03** | **-** |
 | grosseira_61x31 | trapezoid | 10 | 43.9381 | 3.727e-02 | 2.635e+03 | 2.809e-03 | 0.036 |
 | grosseira_61x31 | trapezoid | 100 | 43.9399 | 3.279e-04 | 2.635e+03 | 2.808e-03 | 0.042 |
 | grosseira_61x31 | trapezoid | 1000 | 43.9399 | 0.000e+00 | 2.635e+03 | 2.808e-03 | 0.072 |
-| **grosseira_61x31** | **direta $\langle\mu(T)
-angle$** | **1000** | **-** | **-** | **2.647e+03** | **2.822e-03** | **-** |
+| **grosseira_61x31** | **direta <μ(T)>** | **1000** | **-** | **-** | **2.647e+03** | **2.822e-03** | **-** |
 
 ---
 
