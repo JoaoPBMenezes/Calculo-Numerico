@@ -6,7 +6,7 @@
 Para a temperatura média $\langle T_k 
 angle$:
 1. **Divisão do Domínio:** A aresta de comprimento $L_k$ é dividida em $N$ subintervalos iguais. O passo espacial é $\Delta s = L_k / N$.
-2. **Aplicação do Trapézio Simples:** Em cada subintervalo $[s_{n-1}, s_n]$, a área é aproximada por: $ pprox (\Delta s/2) \cdot [T(s_{n-1}) + T(s_n)]$
+2. **Aplicação do Trapézio Simples:** Em cada subintervalo $[s_{n-1}, s_n]$, a área é aproximada por: $pprox (\Delta s/2) \cdot [T(s_{n-1}) + T(s_n)]$
 3. **Composição:** Ao somar todos os intervalos, os nós internos são somados duas vezes. As pontas, apenas uma: $ pprox (\Delta s/2) \cdot [T(s_0) + 2\sum_{n=1}^{N-1} T(s_n) + T(s_N)]$
 4. **Cálculo da Média:** Como a média é $\langle T_k 
 angle = 	ext{Integral} / L_k$, e $\Delta s/L_k = 1/N$:
